@@ -1,0 +1,81 @@
+
+<div class="container">
+  <div id="stepper1" class="bs-stepper vertical ">
+    <div class="bs-stepper-header">
+      <div class="step" data-target="#test-l-1">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">1</span>
+          <span class="bs-stepper-label">شماره موبایل</span>
+        </button>
+      </div>
+      <div class="line"></div>
+      <div class="step" data-target="#test-l-2">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">2</span>
+          <span class="bs-stepper-label">ورود کد فعال سازی</span>
+        </button>
+      </div>
+
+      <div class="line"></div>
+      <div class="step" data-target="#test-l-3">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">3</span>
+          <span class="bs-stepper-label">کلمه عبور جدید</span>
+        </button>
+      </div>
+    </div>
+    <div class="bs-stepper-content text-right">
+      <form (ngSubmit)="onSubmit()" [formGroup]="passForm" (keydown.enter)="$event.preventDefault()"
+            (keydown.shift.enter)="$event.preventDefault()">
+        <div id="test-l-1" class="content fade">
+          <div class="form-group">
+            <label for="phonenumber">شماره تلفن</label>
+            <input type="text" class="form-control"
+                   NumericInput
+                   formControlName="phonenumber"
+                   id="phonenumber"
+                  (keyup.enter)="sendSms()"
+                  readonly
+                  #inputPhone
+                  (focusout)="inputPhone.setAttribute('readonly','')"
+                  (focus)="inputPhone.removeAttribute('readonly');"
+                   placeholder="شماره تلفن" />
+          </div>
+          <div (click)="sendSms()"
+                 [class.disable]="!passForm.controls.phonenumber.valid"
+               class="btn btn-primary">مرحله بعد</div>
+        </div>
+        <div id="test-l-2" class="content">
+          <div class="form-group">
+            <label for="code">کد ارسال شده</label>
+            <input type="number" class="form-control"
+                   id="code"
+                   formControlName="code"
+                     (keyup.enter)="next()"
+                   placeholder="کد" />
+          </div>
+          <div (click)="next()"
+               [class.disable]="!passForm.controls.code.valid"
+               class="btn btn-primary">مرحله بعد</div>
+        </div>
+
+        <div id="test-l-3" class="content text-center">
+          <div class="form-group">
+            <label for="pass">کلمه عبور جدید</label>
+            <input type="password"
+                   class="form-control"
+                   formControlName="password"
+                   id="pass"
+                    (keyup.enter)="onSubmit()"
+                    readonly
+                    #inputPass
+                    (focusout)="inputPass.setAttribute('readonly','')"
+                    (focus)="inputPass.removeAttribute('readonly');"
+                   placeholder="رمز جدید" />
+          </div>
+          <button type="submit" class="btn btn-primary">ثبت</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

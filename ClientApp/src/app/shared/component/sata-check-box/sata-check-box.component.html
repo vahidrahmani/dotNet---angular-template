@@ -1,0 +1,12 @@
+<div class="container desc-text pr-0 pl-0" (click)="click()" [class.disable]="disabled">
+  <div class="d-flex">
+    <div>
+      <input type="checkbox" id="checkbox" [checked]="model" />
+      <img src="../../../assets/icon/checked.svg" class="icon-check" />
+      <span class="checkmark desc-text" [class.border-check]="model" [class.disable]="disabled"></span>
+    </div>
+    <div class="pr-4 font14" [ngStyle]="{'opacity':model ? 1 : 0.9}">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

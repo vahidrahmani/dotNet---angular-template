@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="header col-12 pr-0 pl-0">
+    <div class="h-right d-flex justify-content-between" id="logo">
+      <div class="logo-title text-white font20 logo-pointer"  (click)="gotoDashborad()">
+        <img src="assets/image/logo.png" height="35" />
+      </div>
+      <div>
+     
+        <a (click)="openCloseNav()">
+          <i class="fa fa-bars font20"></i>
+        </a>
+      </div>
+    </div>
+    <div class="h-right" id="dashboard-ico" [class.disabledTag]="currentPanel == null">
+      <div>
+        <a class="text-light" [routerLink]="['/dashboard']">
+          <i class="fas fa-tachometer-alt"></i>
+          داشبورد
+        </a>
+      </div>
+    </div>
+    <div class="h-left p-3 left-ico">
+      <a [routerLink]="['/dashboard/userInfo']"><i class="fa fa-user"></i></a>
+      <a (click)="logOut()"><i class="fa fa-sign-out-alt"></i></a>
+    </div>
+    <div class="h-left d-flex align-items-center mt-1 currentPanel"
+         *ngIf="currentPanel">
+      <div>
+        <i class="fa fa-bell text-warning"></i>
+      </div>
+      <div>
+        <p class="text-warning mr-3">
+          <span>{{currentPanel.countDay}}</span>
+          روز مانده به انقضای پنل
+        </p>
+      </div>
+
+      <div>
+        <div class="dropdown" id="header-menu">
+          <span class="dropdown-menu-arrow"></span>
+          <button class="dropbtn">
+            {{currentPanel.name}}
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#/dashboard/userInfo?tab=2">
+              مدیریت حساب
+            </a>
+            <a href="#/dashboard/userInfo?tab=1">
+              تنظیمات
+            </a>
+
+           
+            <a (click)="logOut()">
+              خروج
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>

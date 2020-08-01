@@ -1,0 +1,261 @@
+
+.light-theme {
+  .mat-app-background {
+    height: 100%;
+    background-color: #eceff1;
+  }
+
+  .container {
+    max-width: 1440px !important;
+  }
+
+  #main {
+    padding-left: 30px;
+    transition: all ease 0.5s;
+    overflow: auto;
+    height: 91vh;
+    padding-right: 100px;
+  }
+}
+
+.btn-cicle-icon-nav {
+  min-width: 49px;
+  border-radius: 50%;
+  padding: 12px;
+}
+.pr-custom-open{
+    padding-right:280px !important;
+}
+.pl-custom-open {
+  padding-left: 20px !important;
+}
+.pl-custom-close {
+  padding-left: 20px !important;
+}
+.pr-custom-close {
+  padding-right: 90px !important;
+}
+.w-224 {
+  width: 260px !important;
+}
+
+.w-70 {
+  width: 70px !important;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px transparent;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #808080;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #000;
+}
+
+.sidenav {
+  height: auto;
+  // overflow-x: hidden;
+  transition: all ease 0.5s;
+  z-index: 10;
+
+  #inner-sidenav {
+    width: 70px;
+    height: 94vh;
+    background: #FFF;
+    position: fixed;
+    margin-top: 0px;
+    right: 0;
+    overflow-y: auto;
+    padding-top: 1px;
+    transition: all ease 0.5s;
+  }
+}
+/deep/ .cdk-virtual-scroll-viewport::-webkit-scrollbar {
+  width: 5px;
+}
+  /* width */
+/deep/ .cdk-virtual-scroll-viewport::-webkit-scrollbar {
+  width: 5px;
+}
+  /* Track */
+/deep/ .cdk-virtual-scroll-viewport::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px transparent;
+  border-radius: 10px;
+}
+  /* Handle */
+/deep/ .cdk-virtual-scroll-viewport::-webkit-scrollbar-thumb {
+  background: #808080;
+  border-radius: 10px;
+}
+  /* Handle on hover */
+/deep/ .cdk-virtual-scroll-viewport::-webkit-scrollbar-thumb:hover {
+  background: #000;
+}
+
+
+
+
+@media (max-height: 768px) {
+  .light-theme #main {
+    height: 87vh !important;
+  }
+
+  #inner-sidenav {
+    height: 90vh !important;
+  }
+}
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /deep/ .cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  /deep/ .light-theme #main {
+    padding-left: 80px !important;
+  }
+
+  .w-224 {
+    width: 260px  !important;
+    margin-right: 100px !important;
+  }
+
+  .w-70 {
+    width: 0px !important;
+  }
+
+  #inner-sidenav {
+    position: fixed;
+    top: 60px;
+    right: -100px !important;
+    z-index: 999;
+  }
+
+  /deep/ .currentPanel {
+    display: none !important;
+  }
+  .light-theme #main {
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+    overflow-x: hidden;
+  }
+
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  /deep/ .cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .light-theme #main {
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+    overflow-x: hidden;
+  }
+
+  .pl-custom-close {
+    padding-left: 10px !important;
+  }
+
+  .pr-custom-close {
+    padding-right: 10px !important;
+  }
+  /deep/ .currentPanel {
+    display: none !important;
+  }
+
+  /deep/ .light-theme #main {
+    padding-left: 10px !important;
+  }
+
+  /deep/ #chartBox {
+    height: auto !important;
+  }
+
+  .w-224 {
+    width: 260px !important;
+    margin-right: 100px !important;
+  }
+
+  .w-70 {
+    width: 0px !important;
+  }
+
+  #inner-sidenav {
+    position: fixed;
+    top: 60px;
+    right: -100px !important;
+    z-index: 999;
+  }
+
+
+  /deep/ .tabbable {
+    .nav-tabs {
+      .nav-item {
+        display: inline-block;
+        float: none !important;
+
+        .nav-link {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+
+#inner-sidenav {
+  //برای رفع مشکل نمایش نصفه تولتیپ
+  overflow: inherit !important;
+}
+
+
+/deep/ .core-table {
+  thead tr th {
+    font-size: 13px !important;
+    color: #78828c;
+    font-weight: 300;
+    text-align: right;
+  }
+
+  td div p {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+    line-height: 25px !important;
+  }
+}
+.scroll-to-top {
+  position: fixed;
+  bottom: 10px;
+  left: 15px;
+  opacity: 0;
+  transition: all .2s ease-in-out;
+  z-index: 99;
+}
+.show-scroll {
+  opacity: 1;
+  transition: all .2s ease-in-out;
+}

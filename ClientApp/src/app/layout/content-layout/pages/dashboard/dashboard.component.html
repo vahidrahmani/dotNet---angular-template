@@ -1,0 +1,94 @@
+
+<div class="d-flex justify-content-center m-3">
+  <h2 class="font-em">داشبورد</h2>
+</div>
+
+<div class=" row" *ngIf="!loading">
+  <div class="col-xl-4 mb-2 pl-0">
+    <div class=" dashboard">
+      <div class="col-3 float-right mt-2">
+        <div class="circle-outside border-shadow">
+          <i class="el-icon-odometer fa-2x"></i>
+        </div>
+      </div>
+      <div class="col-9 float-left mt-2">
+
+        <div class="item text-right">
+          <p>حجم پلن باقیمانده</p>
+          <p>{{PrecentRemainMessageCount}} % </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="col-xl-4 mb-2">
+    <div class=" dashboard">
+      <div class="col-3 float-right">
+        <div class="circle-outside border-orange">
+          <i class="el-icon-alarm-clock fa-2x"></i>
+        </div>
+      </div>
+      <div class="col-9 float-left">
+
+        <div class="item text-right">
+          <p>مدت زمان باقیمانده</p>
+          <p>{{remainTimePanel}} روز</p>
+        </div>
+        
+      </div>
+    </div>
+
+  </div>
+  <div class="col-xl-4 pr-0">
+    <div class="dashboard ">
+      <div class="col-3 float-right">
+        <div class="circle-outside border-green">
+          <i class="el-icon-receiving fa-2x"></i>
+        </div>
+      </div>
+      <div class="col-9 float-left">
+        <div class="item text-right">
+          <p>تعداد اینباکس ها </p>
+          <p>{{currentPanel.boxCount}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="row">
+  <div class="col-xl-12">
+    <div id="chart" class=" mt-2">
+
+    </div>
+  </div>
+</div>
+
+
+  <div class="col-xl-12 bg-white mt-3 mb-3 table-responsive">
+    <table class="table">
+      <thead>
+        <tr class="text-center">
+          <th scope="col" colspan="2">اینباکس</th>
+          <th scope="col">اینستاگرام</th>
+          <th scope="col">تلگرام</th>
+          <th scope="col">توییتر</th>
+         
+          <th scope="col">جمع کل</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="text-center" *ngFor="let item of MessageCountOnPlatformType$ | async">
+          <td scope="row" colspan="2">{{item.boxName}}</td>
+          <td colspan="1">{{item.instaCount}}</td>
+          <td colspan="1">{{item.telegramCount}}</td>
+          <td colspan="1">{{item.twitterCount}}</td>
+         
+          <td colspan="1">{{item.twitterCount + item.telegramCount + item.instaCount}}</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+

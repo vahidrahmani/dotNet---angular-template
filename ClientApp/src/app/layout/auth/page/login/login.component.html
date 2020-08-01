@@ -1,0 +1,85 @@
+<!--<div class="font-italic font28 logo text-right p-2">ستا باکس</div>-->
+<div class="login-card" *ngIf="!smsCode">
+  <div class="p-3 text-right">
+    <div [hidden]="!error" class="alert alert-danger">
+      {{ error|json}}
+    </div>
+    <form (ngSubmit)="login()" [formGroup]="loginForm">
+      <span class="lable-form"> شماره موبایل </span>
+      <div class="form-group">
+        <label class="d-block">
+          <input type="text" class="form-control"
+                NumericInput
+                 formControlName="mobile">
+          <span class="font12 text-danger"
+                *ngIf="loginForm.controls.mobile.dirty && !loginForm.controls.mobile.valid">شماره موبایل صحیح نیست</span>
+        </label>
+      </div>
+      <span class="lable-form">کلمه عبور</span>
+      <div class="form-group">
+        <label class="d-block">
+          <input type="password" class="form-control"
+                 formControlName="password">
+          <span class="font12 text-danger"
+                *ngIf="loginForm.controls.password.dirty && !loginForm.controls.password.valid">فیلد اجباری</span>
+        </label>
+      </div>
+      <div class="form-group">
+        <app-sata-check-box>من را به خاطر بسپار</app-sata-check-box>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-block btn-raised"
+                [disabled]="loginForm.invalid">
+          <span *ngIf="!isLoading">ارسال</span>
+          <span *ngIf="isLoading" class="font13">
+            <span class="spinner-grow text-primary"
+                  role="status">
+            </span>
+            لطفا صبر کنید
+          </span>
+        </button>
+      </div>
+      <div class="d-flex justify-content-between font12 forgotPass">
+        <div>
+          <a [routerLink]="['/auth/forgotPass']">
+            <i class="fas fa-lock"></i>
+            &nbsp; فراموشی رمز عبور
+          </a>
+        </div>
+        <div>
+          <a [routerLink]="['/auth/register']">
+            <i class="fas fa-lock"></i>
+            &nbsp; ثبت نام
+          </a>
+        </div>
+
+
+      </div>
+    </form>
+  </div>
+</div>
+<div class="login-card" *ngIf="smsCode">
+  <div class="p-3 text-right">
+    <div [hidden]="!error" class="alert alert-danger">
+      {{ error}}
+    </div>
+    <span class="lable-form"> کد ارسال شده: </span>
+    <div class="form-group">
+      <label class="d-block">
+        <input type="text" class="form-control" [(ngModel)]="smsCode">
+      </label>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-block btn-raised" (click)="login()"
+              [disabled]="!smsCode">
+        <span *ngIf="!isLoading">ورود</span>
+        <span *ngIf="isLoading" class="font13">
+          <span class="spinner-grow text-primary"
+                role="status">
+          </span>
+          لطفا صبر کنید
+        </span>
+      </button>
+    </div>
+  </div>
+</div>

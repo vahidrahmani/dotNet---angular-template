@@ -1,0 +1,54 @@
+
+<div >
+  <ng-template [ngIf]="openClose">
+    <div class="d-flex justify-content-between p-2 item "
+         *ngIf="item.children  "
+         (click)="expanded != expanded;item.route && getToRout(item)"
+         data-toggle="collapse" [attr.data-target]="'#parent' + item.index" aria-expanded="false" aria-controls="collapseExample">
+      <div class="d-flex align-items-center" [ngStyle]="{'padding-right': (depth * 30) + 'px'}">
+        <div class="title" *ngIf="root"><span>{{item.displayName ? item.displayName.trim().split('')[0] : '--'}}</span></div>
+        <div class="mr-2 font14">
+          <span>{{item.displayName||'--'}}</span>
+        </div>
+      </div>
+      <ng-container *ngIf="item.children && item.children.length">
+        <i class="el-icon-arrow-up mt-2"></i>
+        <i class="el-icon-arrow-down mt-2"></i>
+      </ng-container>
+    </div>
+    <div *ngIf="!item.children" class="p-3 item " (click)="getToRout(item)">
+      <div class="d-flex" [ngStyle]="{'padding-right': (depth * 30) + 'px'}">
+        <span *ngIf="item.iconName"><i class="{{item.iconName}} font11"></i></span>
+        <span class="mr-2 font12">{{item.displayName}}</span>
+      </div>
+    </div>
+    <div class="collapse" id="parent{{item.index}}" *ngxPermissionsOnly="item.permissionKey">
+      <app-side-nav *ngFor="let child of item.children" [root]="false" [item]="child" [depth]="depth+1"
+                    [openClose]="openClose">
+      </app-side-nav>
+    </div>
+  </ng-template>
+
+
+  <ng-template [ngIf]="!openClose" >
+    <!--[popover]="HtmlTemplate" placement="left"
+   popoverTitle="{{item.displayName}}"
+     triggers="mouseenter"
+       [delay]="200"
+       [outsideClick]="true"-->
+    <div *ngIf="item.children && item.children.length>0" class="menu-item cursor-pointer border-bottom">
+
+      <div class="title m-3 p-3" (click)="getToRout(item.children[0])" placement="left" [ngbTooltip]="item.displayName">
+        <span>{{item.displayName ? item.displayName.trim().split('')[0] : '--'}}</span>
+      </div>
+      <ng-template #HtmlTemplate>
+        <div *ngFor="let child of item.children" (click)="getToRout(child)" class="d-flex p-2 font14 cursor-pointer popover-menu">
+          <span *ngIf="item.iconName"><i class="{{child.iconName}} font10"></i></span>
+          <span class="mr-2">{{child.displayName}}</span>
+        </div>
+      </ng-template>
+    </div>
+  </ng-template>
+</div>
+
+

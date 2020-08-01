@@ -1,0 +1,66 @@
+
+
+.dashboard {
+  border-radius: 4px;
+  border: 1px solid #ebeef5;
+  background-color: #fff;
+  overflow: hidden;
+  color: #303133;
+  height:112px;
+  transition: .3s;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+
+  .el-icon-alarm-clock {
+    color: #ffb74e;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  .el-icon-odometer {
+    color: #4886ff;
+    margin-left: 9px;
+    margin-top: 9px;
+  }
+
+  .el-icon-receiving {
+    color: #7ad835;
+    margin-left: 9px;
+    margin-top: 9px;
+  }
+
+  .circle-outside {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    right: 25px;
+    border-radius: 100%;
+    top: 13px;
+  }
+
+  .item {
+    padding: 20px;
+
+    p {
+      font-size: 16px;
+    }
+  }
+}
+
+.border-orange {
+  border: 10px solid #ffb74e;
+}
+.border-shadow {
+  border: 10px solid rgb(229, 233, 242);
+}
+.border-green {
+  border: 10px solid #7ad835;
+}
+/deep/ .highcharts-container {
+  width: 100% !important;
+  background:#FFF;
+}
+
+/deep/ .highcharts-root {
+  width: 100% !important;
+  background: #FFF;
+}

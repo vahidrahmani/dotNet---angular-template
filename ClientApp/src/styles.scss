@@ -1,0 +1,188 @@
+
+
+@import "‍~variables.scss";
+@import '~bs-stepper/dist/css/bs-stepper.min.css';
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label, div, tspan, text, input {
+  font-family: iranyekan !important;
+  font-weight: bold;
+}
+
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+ul {
+  list-style-type: none;
+}
+
+@font-face {
+  font-family: iransans;
+  src: url('assets/IRANSans/Farsi_numerals/webFonts/fonts/woff/IRANSansWeb(FaNum).woff') format('woff'),
+      url('assets/IRANSans/WebFonts/fonts/ttf/IRANSansWeb.ttf') format('truetype');
+}
+@font-face {
+  font-family: iranyekan;
+  src: url('assets/iranYekan/IRANYekanLightMsn.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: iransansbold;
+  src: url('assets/IRANSans/Farsi_numerals/webFonts/fonts/woff/IRANSansWeb(FaNum)_Bold.woff')
+  format('woff'), url('assets/IRANSans/WebFonts/fonts/ttf/IRANSansWeb_Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'element-icons';
+  src: url('assets/fonts-ico/element-icons.woff') format("woff"), url('assets/fonts-ico/element-icons.ttf') format("truetype");
+  /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  font-weight: normal;
+  font-display: "auto";
+  font-style: normal;
+}
+
+[class^="el-icon-"], [class*=" el-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'element-icons' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: baseline;
+  display: inline-block;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/*body, html {
+ 
+  font-family: Poppins-Regular, sans-serif;
+}*/
+.container-fluid {
+  background: #eceff1;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0px;
+  color: #000000;
+}
+
+p {
+  font-family: iranyekan;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #000000;
+  margin: 0px;
+}
+
+input {
+  outline: none;
+}
+
+dp-date-picker {
+  width: 100% !important;
+  padding: 0 !important;
+
+  & input {
+    width: 100% !important;
+  }
+}
+
+dp-time-select .dp-time-select-controls {
+  direction: ltr !important;
+}
+
+.dp-picker-input {
+  width: 100%;
+  height: calc(2.95rem + 2px) !important;
+  padding: 23px;
+  font-size: 1rem;
+  line-height: 1;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+}
+.dp-date-picker-width-auto {
+  .dp-picker-input {
+    width: auto !important
+  }
+}
+.card {
+  box-shadow: 0px 0px 10px 0px #CCC;
+
+  .card-body {
+    line-height: 32px;
+  }
+}
+
+.btn-purple {
+  color: #fff;
+  background-color: #5e35b1;
+  border-color: #5e35b1
+}
+.btn-purple:hover {
+  background: #7e5dc1;
+  border-color: #7e5dc1;
+  color: #fff;
+}
+.text-purple {
+  color: #5e35b1;
+}
+.btn-outline-purple {
+  background: #FFF;
+  border-color: #7e5dc1;
+  color: #7e5dc1;
+}
+.btn-outline-purple:hover {
+  background: #7e5dc1;
+  border-color: #7e5dc1;
+  color: #fff;
+}
+
+.box-light {
+  background: #FFF;
+  border-radius: 5px;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+}
+
+.loading-box {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: #ffffffb3;
+}
+.font-em{
+    font-size:1.5em;
+}
+
+.disabledTag {
+  pointer-events: none;
+  opacity: 0.4;
+}
+.font-8rem{
+    font-size:.8rem;
+}
+
+.circlar-image img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-image:none !important;
+}
+
+input[readonly] {
+  background-color: white !important;
+}
